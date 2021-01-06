@@ -1,22 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Ido from "../components/Ido"
+import ImagenPerfil from '../components/imagenPerfil'
+
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
+
+  <>
+    <Layout>
+      <div className="about">
+        <div className="foto">
+          <ImagenPerfil/>
+        </div>
+        <div className="datos">
+          <span>Web Development</span>
+          <h1>Jack Sánchez</h1>
+          <p>Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.</p>
+          <div className="botones-about">
+            <div>
+              <button className="btn-download">Download CV</button>
+            </div>
+            <div>
+              <button className="btn-contact">Contact</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <Ido/>
+      
+      <Ido/>
+      <Ido/>
+      <Ido/>
+      <Ido/>
+      
+    </Layout>
+  </>
+
 )
 
 export default IndexPage

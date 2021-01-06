@@ -1,0 +1,392 @@
+@import "./mixins";
+@import "./variables"; 
+
+html {
+    @include box-sizing(border-box);
+}
+
+*,
+*::after,
+*::before {
+    @include box-sizing(inherit);
+}
+
+
+body {
+  font: 100% $font-primary;
+  color: $primary-color;
+  background: $secondary-color
+}
+.layout{
+    margin: 20px 40px;
+    background: $primary-color;
+    border-radius: 40px;
+}
+.header{
+    padding: 30px 20px 20px 20px;
+    color: $tertiary-color;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    
+    .logo{
+        border: solid 1px;
+        border-radius: 20px;
+        border-color: $secondary-color;
+        padding: 5px 20px;
+        h2{
+            margin: 0px;
+        }
+    }
+    .links{
+        //border: solid 1px;
+        border-radius: 20px;
+        border-color: $secondary-color;
+        display: flex;
+        align-items: center;
+        .about{
+            border-radius: 20px 0 0 20px;
+            border: solid 1px;
+            border-color: $secondary-color;
+            border-right: transparent;
+            transition: all 0.5s ease;
+            &:hover{
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+        }
+        .contact{
+            border-radius: 0px 20px 20px 0px;
+            border: solid 1px;
+            border-color: $secondary-color;
+            border-left: transparent;
+            transition: all .5s ease;
+            &:hover{
+                border-radius: 0px 20px 20px 0px;
+            }
+        }
+        .link{
+            border-bottom: 1px solid;
+            border-top: 1px solid;
+            border-color: $secondary-color;
+            color: $tertiary-color;
+            text-decoration: none;
+            //margin: 0px 10px;
+            padding: 10px 20px;
+            transition: all 0.5s ease;
+            &:hover{
+                background: white;
+                color: $primary-color;
+            }
+        }
+    }
+}
+.pagina-actual{
+    background: white;
+    color: $primary-color !important;
+    
+}
+.about{
+    color: $tertiary-color;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 40px 0px;
+    .foto{
+        flex: 0 1 25%;
+        padding: 4px 0px;
+        //border: 1px solid;
+    }
+    .datos{
+        flex: 0 1 45%;
+        padding: 40px 0px 40px 50px;
+        //border: 1px solid;
+        h1{
+            font-size: 48px;
+            margin: 0px;
+        }
+        p{
+            font-size: 14px;
+        }
+        .botones-about{
+            display: flex;
+        }
+        .btn-download{
+            @include boton($oscuro, $secondary-color);
+        }
+        .btn-contact{
+            @include boton($oscuro, $tertiary-color)
+        }
+    }
+}
+.imgPerfil{
+    border-radius: 50%;
+    border: 14px solid $oscuro4;
+    
+}
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    color: #ddd;
+    background: $oscuro;
+    padding: 20px 30px;
+    border-top: 2px solid #333;
+    border-radius: 0px 0px 40px 40px;
+    font-size: 13px;
+    a{
+        color: #ddd;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+}
+
+.breadcrumb{
+    background: $oscuro;
+    color: $tertiary-color;
+    border-top: 2px solid $oscuro2;
+    border-bottom: 2px solid $oscuro2;
+    position: relative;
+    h1{
+        padding: 40px 70px;
+        font-size: 44px;
+    }
+    span{
+        position: absolute;
+        right: 50px;
+        top: 20px;
+    }
+}
+.what-do{
+    margin: 40px 60px;
+    h2{
+        font-size: 21px;
+        color: $tertiary-color;
+    }
+    .what-do-container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+    }
+}
+
+.task{
+    border: 1px solid;
+    flex: 0 0 48%;
+    display: flex;
+    justify-content: space-between;
+    //border: 1px solid white;
+    //margin: 10px auto;
+    .icon-task{
+        color: $secondary-color;
+        font-size: 40px;
+        flex: 0 0 15%;
+        display: flex;
+    }    
+    .task-desc{
+        flex: 0 0 85%;
+        //margin-left: 5px;
+        span{
+            font-size: 18px;
+            font-weight: 700;
+            color: $claro;
+        }
+        p{
+            font-size: 12.88px;
+            color: $claro2;
+        }
+    }
+
+}
+
+.resumen{
+    margin: 40px 60px 60px 60px;
+
+    display: flex;
+    justify-content: space-around;
+    .resumen-education{
+        flex: 0 0 43%;
+        //border: 1px solid white;
+        h2{
+            color: $claro;
+            margin-left: -35px;
+            font-size: 21px;
+        }
+    }
+    .resumen-experience{
+        flex: 0 0 43%;
+        //border: 1px solid white;
+    }
+    h2{
+        color: $claro;
+        margin-left: -35px;
+        font-size: 21px;
+    }
+}
+
+.education{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid $oscuro2;
+    border-left: 2px solid $oscuro2;
+    
+    .primera{
+        display: flex;
+        align-items: center;
+        margin: 10px 0px;
+        .year{
+            color: $claro2;
+            font-size: 12px;
+            border-radius: 20px;
+            border: 2px solid $secondary-color;
+            margin: 0px 20px 0px -30px;
+            padding: 2px 12px;
+            font-weight: 400;
+            background: $primary-color;
+        }
+        .lugar{
+            color: $oscuro5;
+            font-size: 12px;
+        }
+    }
+    .segunda{
+        margin: 0px 0px 10px 20px;
+
+        .title{
+            color: $claro;
+            font-size: 16px;
+        }
+        .description{
+            color: $claro2;
+            font-size: 12.88px;
+        }
+    }
+}
+.portafolio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 60px;
+}
+.cardPortafolio{
+    flex:  0 0 45%;
+    //border: 1px solid red;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0px;
+    position: relative;
+    h3{   
+        position: absolute;
+        z-index: 100;
+        border-radius: 8px;
+        left: 10px;
+        top: 10px;
+        color: $claro;
+        background: $primary-color;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 4px;
+        transition: all .5s ease;
+        
+    }
+    .detailed{
+        position: absolute;
+        z-index: 101;
+        border-radius: 8px;
+        right: 10px;
+        bottom: 10px;
+        color: $claro;
+        background: $primary-color;
+        margin: 0;
+        font-size: 10px;
+        padding: 2px 4px;
+        transition: all .5s ease;
+        text-decoration: none;
+        &:hover{
+            transform: scale(1.1);
+        }
+        
+    }
+    .cardImage{
+        max-width: 100%;
+        min-height: 300px;
+        background-position: bottom center;
+        background-repeat: repeat-y;
+        background-size: cover;
+        
+        border-radius: 20px;
+        transition: all .5s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
+       
+    }
+}
+
+.portafolio-component{
+    margin: 60px;
+    //border: 1px solid white;
+    h1{
+        color: $claro;
+        font-size: 32px;
+        margin: 40px 0px;
+    }
+    .container-portafolio{
+        display: flex;
+        justify-content: space-between;
+        .images-portafolio{
+            flex: 0 0 65%;
+        }
+        .portafolio-description{
+            flex: 0 0 30%;
+            background: $oscuro2;
+            
+            padding: 20px;
+            border-radius: 20px;
+            border: 2px solid $oscuro4;
+            h3{
+                color: $claro;
+                font-size: 18px;
+                margin: 10px 0px;
+            }
+            a{  
+                font-size: 14px;
+                color: $secondary-color;
+            }
+            p{
+                color: $claro2;
+                margin: 10px 0px;
+            }
+            .portafolio-technology{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            span{
+                font-size: 12px;
+                color: white;
+                background: #666666;
+                padding: 2px 7px;
+                margin: 3px 3px 3px 0px;
+                border: 1px solid transparent;
+                border-radius: 3px;
+                width: auto;
+                flex: 0 0 auto;
+                
+            }
+            .icon-port{
+                font-size: 13px;
+                color: $secondary-color;
+                margin-right: 5px;
+            }
+            .description-port{
+                font-size: 14px;
+                line-height: 25px;
+            }
+
+        }
+    }
+
+}
